@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default" >
+	<div class="container-fluid" ng-init="init()">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand active" href="/#/painel">Estacionamentos</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li ui-route="{{menuItems.url}}" ng-class="{active: $uiRoute}"
+				ng-disabled="{active: $uiRoute}"
+				ng-repeat="(key, menuItem) in menuItems">
+				<a ui-sref="{{menuItem.url}}"  title="{{menuItem.title}}">
+					{{menuItem.name}}
+				</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a ng-click="sair()" class="btn  glyphicon glyphicon-log-in"></a></li>
+		</ul>
+	</div>
+</div>
+</nav>
+
+<div ui-view=""> </div>
+
+
+
